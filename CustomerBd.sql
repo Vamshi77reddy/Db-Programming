@@ -112,4 +112,69 @@ select * from users
 	select * from users
 order by username
 	
+	select distinct age
+	from users
+	order by age
+
+	select * from users
+	where age=25
+	order by username
+
+	select * from users
+	where age=25 or age>25
+	order by username
+
+	select *from orders
+	where order_total between 400 and 600
+	order by order_id
+
+		select *from orders
+	where order_total > 400 and order_total>=600
+	order by order_id
+
 	
+		select *from orders
+	where order_total in (150,175.25,500,50)
+	order by order_id
+
+	select *from orders
+	where order_total not in (150,175.25,500,50)
+	order by order_id
+
+	select * from users
+	where user_id between 1 and 7
+	order by username
+
+	select * from users
+	where age between 20 and 26
+	order by user_id
+
+	select username,email
+	from users 
+	where username like 'S%'
+	order by username
+
+	select username,email
+	from users 
+	where username like 'S%i'
+	order by username
+
+	select username,email
+	from users 
+	where username like '%k'
+	order by username
+
+	select username,email
+	from users 
+	where username like '_e%'
+	order by username
+
+	select username,email
+	from users 
+	where username like '[DK]%'
+	order by username
+
+	select username,email
+	from users 
+	where username like '[A-D]%'
+	order by username
