@@ -14,8 +14,6 @@ CREATE TABLE users (
     registration_date DATE DEFAULT GETDATE()
 );
 
-alter table users 
-alter column user_id int IDENTITY(1,1) primary key,
 -- Create an 'orders' table with a foreign key reference to 'users'
 CREATE TABLE orders (
     order_id INT PRIMARY KEY,
@@ -63,11 +61,19 @@ VALUES
     (117, 13, 475.25);
 
 	--using select--
-	select username,age from users;
+	select username,age
+	from users;
 
-	select username,age from users where age<25;
+	select username,age 
+	from users 
+	where age<25;
 
-	select  username  from users where age <30 group by username order by username;
+	select  username
+	
+	from users 
+	where age <30
+	group by username 
+	order by username;
 
 	select username,email,age from users order by age desc;
 
@@ -92,5 +98,18 @@ VALUES
 	from orders
 	order by order_total desc
 
+	---distint---
+	select distinct user_id
+from orders 
+order by user_id
+
+select * from users
+
+	select username,count(*) from users
+	where age<=30 group by username
+	order by username
+
+	select * from users
+order by username
 	
 	
