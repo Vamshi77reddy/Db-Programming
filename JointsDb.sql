@@ -64,6 +64,28 @@ where projaec_id='P4'
 
 Select * from projects
 
+create table company(
+comp_id int,
+company_name varchar(20),
+compant_location varchar(20)
+)
+insert into company values (1001,'BridgeLabz','Mumbai')
+
+create table family (
+member_id varchar(20),
+name varchar(40),
+age int,
+parent_id varchar(20)
+)
+insert into family values ('F1','david',4,'F5'),
+('F2','carol',10,'F5'),
+('F3','michel',12,'F5'),
+--('F4','jhonson',36),
+('F5','mariam',43,'F6'),
+--('F6','stev',70),
+('F7','rohan',6,'F4'),
+('F8','asta',8,'F4')
+
 
 --fetch employee name and department using joints
 --inner joint or joint
@@ -101,9 +123,41 @@ select * from employee
 select * from departments
 select * from manager
 select * from projects
+---
+
+
+-----full joint or full outer joint---
+
+select e.emp_name,d.dep_name
+from employee e
+full join departments d on e.dep_id=d.dep_id
+
+
+----cross joint ---it returns cartesian
+
+select e.emp_name,d.dep_name
+from employee e
+cross join departments d
 
 
 
+---fetch company name to employees using cross join
+select e.emp_name,d.dep_name,c.company_name,c.compant_location
+from employee e
+inner join departments d on e.dep_id=d.dep_id
+cross join company c
 
 
+--self join 
 
+select
+child.name as child_name,child.age as child_age,
+parent.name as parent_name,parent.age as parent_age
+from family as child
+ join family as parent on child.parent_id=parent.member_id
+
+ select
+child.name as child_name,child.age as child_age,
+parent.name as parent_name,parent.age as parent_age
+from family as child
+left join family as parent on child.parent_id=parent.member_id 

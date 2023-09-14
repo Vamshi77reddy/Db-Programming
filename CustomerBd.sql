@@ -38,7 +38,8 @@ VALUES
     (10, 'Sheik', 'sheik@example.com', 'sheik_password', 29),
     (11, 'Azar', 'azar@example.com', 'azar_password', 32),
 	(12, 'Karan', 'Karan@example.com', 'karan_password', 21),
-    (13, 'Sandeep', 'sandeep@example.com', 'sandeep_password', 20)
+    (13, 'Sandeep', 'sandeep@example.com', 'sandeep_password', 20),
+
 
 
 
@@ -178,3 +179,8 @@ order by username
 	from users 
 	where username like '[A-D]%'
 	order by username
+
+
+	INSERT INTO users (user_id, username, email, password, age)
+VALUES
+    (14, 'jacob12', 'jacob12@example.com', 'jacob_password', 25);
