@@ -158,3 +158,48 @@ end
 execute deleteuser 13
 
 	select * from users
+
+
+	SELECT
+    *,
+    CASE
+        WHEN Age < 30 THEN 'Young'
+        WHEN Age >= 30 THEN 'Adult'
+        ELSE 'Unknown'
+    END AS AgeCategory
+FROM users;
+
+
+DECLARE @Counter INT = 1;
+
+WHILE @Counter <= 5
+BEGIN
+    PRINT 'Loop iteration: ' + CAST(@Counter AS NVARCHAR(10));
+    SET @Counter = @Counter + 1;
+END;
+
+BEGIN
+    INSERT INTO users(username, Salary, Age, Country)
+    VALUES ('kiran', 40000., 25, 'Australia');
+    SELECT * FROM users;
+END;
+
+
+alter PROCEDURE GetNameByID
+    @user_id INT
+AS
+BEGIN
+    DECLARE @username NVARCHAR(50);
+    SELECT @username = username FROM users WHERE user_id = @user_id;
+
+    IF @username IS NULL
+        print 'Employee not found';
+    ELSE
+        print @username;
+END;
+
+execute GetNameByID @user_id=2
+
+
+
+     

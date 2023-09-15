@@ -73,7 +73,21 @@ select * from customers where age in (select age from customers where age=22)
 with cte1 as (select first_name,country from customers)
 select * from cte1
 
-with avgerage_cost (avg_sal)as (avg(amount) from orders)
-select * from orders o,average_cose a
-where o.amount>a.avg_sal
+with customerinusa as (
+select * from customers where country='usa'
+)
+select * from customerinusa
+
+select * from customers
+
+WITH CustomerAges AS (
+    SELECT age
+    FROM customers
+)
+-- Query to calculate the average age of customers
+SELECT AVG(age) AS AverageAge
+FROM CustomerAges;
+
+
+
 
