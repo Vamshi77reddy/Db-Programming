@@ -70,3 +70,10 @@ select * from customers where age in (select age from customers where age=22)
 
 ---CTE - common table expression ---
 
+with cte1 as (select first_name,country from customers)
+select * from cte1
+
+with avgerage_cost (avg_sal)as (avg(amount) from orders)
+select * from orders o,average_cose a
+where o.amount>a.avg_sal
+
