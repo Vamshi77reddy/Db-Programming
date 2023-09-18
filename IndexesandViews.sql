@@ -84,10 +84,12 @@ VALUES
 	as 	select * from employees
 		select * from viewEmployee
 
-alter view columnlevel
+create view rowlevel
 as select first_name,salary from employees
 
 select * from rowlevel
 
-create view columnlevel
-as select
+create view rowlevel1
+as select * from employees where employee_id<5
+
+select * from rowlevel1
