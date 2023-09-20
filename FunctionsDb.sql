@@ -158,6 +158,10 @@ employees ORDER BY
     LEN(first_name) DESC;
 
 
+	select * from employees
+	where employee_id=2
+
+
 
 	------user defined fumctions---
 
