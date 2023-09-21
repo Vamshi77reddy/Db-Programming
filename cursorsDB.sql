@@ -86,7 +86,7 @@ declare student cursor scroll for select student_name,maths_marks,eng_marks,sci_
 declare @student_name varchar(50),@maths_marks int,@eng_marks int,@sci_marks int;
 open student
 fetch first from student into @student_name,@maths_marks,@eng_marks,@sci_marks
- print concat('student : ',@student_name,@maths_marks,@eng_marks,@sci_marks);
+ print concat('student : ',@student_name   ,@maths_marks,@eng_marks,@sci_marks);
 
 
 close student
