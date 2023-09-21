@@ -9,6 +9,8 @@ product_id int identity,
     list_price dec(10,2)
 )
 
+
+----DML triggers---
 CREATE TABLE productsauditslog(
     change_id INT IDENTITY PRIMARY KEY,
     product_id INT NOT NULL,
@@ -98,3 +100,25 @@ VALUES (
 
 delete from products
 where product_id=1
+
+
+
+
+
+-----DDL Triggers-------
+create trigger trgpreventtable
+on database
+for create_table,alter_table,drop_TABLE
+as 
+begin 
+print 'You cannor create,alter,drop database'
+end 
+rollback transaction
+
+create table bill(inta int)
+
+drop table products
+
+select * from productsauditslog
+
+select * from products

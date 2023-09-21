@@ -87,8 +87,7 @@ VALUES
 create view rowlevel
 as select first_name,salary from employees
 
-select * from rowlevel
-
+    
 create view rowlevel1
 as select * from employees where employee_id<5
 
